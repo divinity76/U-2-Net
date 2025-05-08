@@ -103,7 +103,7 @@ elif(model_name=='u2netp'):
 if torch.cuda.is_available():
     n_gpu = torch.cuda.device_count()
     if n_gpu > 1:
-        print(f"Found {n_gpu} GPUs. Using DataParallel.")
+        print(f"Found {n_gpu} GPUs. Using torch.nn.DataParallel.")
         net = nn.DataParallel(net)       # wrap for multi-GPU
     net = net.cuda()                    # send to CUDA (all replicas)
 
